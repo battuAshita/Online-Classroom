@@ -33,6 +33,12 @@ def dashboard():
     print('Dashboard')
 
 
+@app.route("/Assignments", methods=["GET", "POST"])
+def assignments_page():
+    if request.method == "GET":
+        return render_template("Assignments.html")
+
+
 if __name__ == "__main__":
     # Get the database
     db = get_database()
