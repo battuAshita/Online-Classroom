@@ -29,8 +29,10 @@ def register_page():
 
 
 @app.route("/dashboard", methods=["GET"])
-def dashboard():
-    print('Dashboard')
+def dashboard_page():
+    if request.method == "GET":
+        print('Dashboard')
+        return render_template("dashboard.html")
 
 
 @app.route("/Assignments", methods=["GET", "POST"])
