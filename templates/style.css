@@ -1,1 +1,77 @@
+html{
+  background: linear-gradient(100deg,  #FCE77D 20%, #F96167 80%);
+}
 
+.container{
+ background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 410px;
+  padding: 30px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.container .text{
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+}
+.container form{
+  margin-top: -20px;
+}
+.container form .data{
+  height: 45px;
+  width: 100%;
+  margin: 40px 0;
+}
+form .data h3{
+  font-size: 18px;
+  margin-bottom: 1%;
+}
+form .data input{
+  height: 100%;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  border: 1px solid silver;
+}
+
+form .btn{
+  margin: 30px 0;
+  height: 45px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+form .btn .inner{
+  height: 100%;
+  width: 300%;
+  position: absolute;
+  z-index: -1;
+  background: -webkit-linear-gradient(right,  #FCE77D, #F96167,  #FCE77D, #F96167);
+}
+
+form .btn input{
+  height: 100%;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+form .signup-link{
+  text-align: center;
+}
+form .signup-link a{
+  color: #3498db;
+  text-decoration: none;
+}
+form .signup-link a:hover{
+  text-decoration: underline;
+}
