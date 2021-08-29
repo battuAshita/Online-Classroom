@@ -1,1 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Assignments</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+<div class="container">
+<form name="my_form" method="post" action="{{ url_for('assignments_page') }}">
+<details><summary><h3>Past Assignments</h3></summary>    
+    <div class="data">
+    <h4>IC100 - HW1</h4>
+    <br>
+    </div>
+    <div class="data">
+    <h4>IC300 - HW3</h4>
+    <br>
+    </div>
+    </details>
+<details><summary><h3>Upcoming Assignments</h3></summary>
+    <div class="data">
+    <h4>IC100 - HW2</h4>
+    <br>
+    </div>
+    <div class="data">
+    <h4>CS300 - HW4</h4>
+    <br>
+    </div>
+    </details> 
+    
+</form>
+</div>
+
+
+</body>
+</html>
