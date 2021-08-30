@@ -16,11 +16,12 @@ db = client['flipr']
 
 class User:
 
-    def register(self, username, email, courses=None):
+    def register(self, username, password, email, courses=None):
         if courses is None:
             courses = list()
         user = {
             "username": username,
+            "password": password,
             "email": email,
             "courses_taken": courses
         }
@@ -31,6 +32,12 @@ class User:
 def home_page():
     if request.method == "GET":
         return render_template("homePage.html")
+    
+    u = request.form['username']
+    p = request.form['password'] 
+    
+    # logging in to dashboard
+  
 
     return render_template("dashboard.html")
 
@@ -41,12 +48,13 @@ def register_page():
         return render_template("registerPage.html")
 
     u = request.form['username']
+    p = request.form['password']
     e = request.form['email']
     c = request.form['courses_taken'].split(',')
 
     # Insert new user data to the database
     if u != "" and e != "":
-        user = User().register(u, e, c)
+        user = User().register(u, p, e, c)
         db.users.insert_one(user)
 
     return render_template("homePage.html")
