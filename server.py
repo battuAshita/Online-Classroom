@@ -1,7 +1,6 @@
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template
 from pymongo import MongoClient
 import urllib
-import uuid
 
 app = Flask(__name__)
 
@@ -40,10 +39,12 @@ def home_page():
 def register_page():
     if request.method == "GET":
         return render_template("registerPage.html")
+
     u = request.form['username']
     e = request.form['email']
     c = request.form['courses_taken'].split(',')
 
+    # Insert new user data to the database
     if u != "" and e != "":
         user = User().register(u, e, c)
         db.users.insert_one(user)
@@ -58,22 +59,22 @@ def dashboard_page():
         return render_template("dashboard.html")
 
 
-@app.route("/Assignments", methods=["GET", "POST"])
+@app.route("/assignments", methods=["GET", "POST"])
 def assignments_page():
     if request.method == "GET":
         return render_template("Assignments.html")
 
 
-@app.route("/Tests", methods=["GET", "POST"])
+@app.route("/tests", methods=["GET", "POST"])
 def tests_page():
     if request.method == "GET":
         return render_template("tests.html")
 
 
-@app.route("/Calendar", methods=["GET", "POST"])
-def calender_page():
+@app.route("/calendar", methods=["GET", "POST"])
+def calendar_page():
     if request.method == "GET":
-        return render_template("calender.html")
+        return render_template("calendar.html")
 
 
 if __name__ == "__main__":
