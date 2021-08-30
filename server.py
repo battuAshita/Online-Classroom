@@ -1,31 +1,54 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 from pymongo import MongoClient
 import urllib
+import uuid
 
 app = Flask(__name__)
 
+CONNECTION_STRING = "mongodb+srv://FlipR:" + urllib.parse.quote_plus(
+    "Flipr@123") + "@flipr.ipovt.mongodb.net/flipr?retryWrites=true&w=majority"
 
-def get_database():
-    CONNECTION_STRING = "data models+srv://FlipR:" + urllib.parse.quote_plus(
-        "Flipr@123") + "@flipr.ipovt.data models.net/flipr?retryWrites=true&w=majority"
+# Create a connection using MongoClient
+client = MongoClient(CONNECTION_STRING)
 
-    # Create a connection using MongoClient
-    client = MongoClient(CONNECTION_STRING)
-
-    # Create a database named user data
-    return client['flipr']
+# Create a database named user data
+db = client['flipr']
 
 
-@app.route("/home", methods=["GET", "POST"])
+class User:
+
+    def register(self, username, email, courses=None):
+        if courses is None:
+            courses = list()
+        user = {
+            "username": username,
+            "email": email,
+            "courses_taken": courses
+        }
+        return user
+
+
+@app.route("/", methods=["GET", "POST"])
 def home_page():
     if request.method == "GET":
         return render_template("homePage.html")
+
+    return render_template("dashboard.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register_page():
     if request.method == "GET":
         return render_template("registerPage.html")
+    u = request.form['username']
+    e = request.form['email']
+    c = request.form['courses_taken'].split(',')
+
+    if u != "" and e != "":
+        user = User().register(u, e, c)
+        db.users.insert_one(user)
+
+    return render_template("homePage.html")
 
 
 @app.route("/dashboard", methods=["GET"])
@@ -47,18 +70,11 @@ def tests_page():
         return render_template("tests.html")
 
 
-@app.route("/Calender", methods=["GET", "POST"])
+@app.route("/Calendar", methods=["GET", "POST"])
 def calender_page():
     if request.method == "GET":
         return render_template("calender.html")
 
 
 if __name__ == "__main__":
-    # Get the database
-    db = get_database()
-    # Dummy document
-    user = {"first_name": "a"}
-
-    db.users.insert_one(user)
-
     app.run(debug=True)

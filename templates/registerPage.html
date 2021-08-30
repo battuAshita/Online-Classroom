@@ -3,40 +3,40 @@
 <head>
     <meta charset="utf-8">
     <title>Home Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 
 <body>
 <div class="container">
-<h2 class="text">Sign Up</h2>
-<form name="my_form" method="post" action="{{ url_for('register_page') }}">
-    <div class="data">
-    <h3>Create a username</h3>
-    <input type="text" name="username"><br>
-    <br>
-    </div>
-    <div class="data">
-    <h3>Create a password</h3>
-    <input type="text" name="password"><br>
-    <br>
-    </div>
-    <div class="data">
-    <h3>Enter a valid email</h3>
-    <input type="text" name="email"><br>
-    <br>
-    </div>
-    <div class="data">
-    <h3>Enter the courses you want to take</h3>
-    <input type="text" name="courses_taken"><br>
-    <br>
-    </div>
-    
-    <div class="btn">
-    <div class="inner">
-    </div>
-    <input type="submit">
-    </div>
-</form>
+    <h2 class="text">Sign Up</h2>
+    <form name="my_form" method="post" action="{{ url_for('register_page') }}">
+        <div class="data">
+            <h3>Create a username</h3>
+            <input type="text" name="username"><br>
+            <br>
+        </div>
+        <div class="data">
+            <h3>Create a password</h3>
+            <input type="text" name="password"><br>
+            <br>
+        </div>
+        <div class="data">
+            <h3>Enter a valid email</h3>
+            <input type="text" name="email"><br>
+            <br>
+        </div>
+        <div class="data">
+            <h3>Enter the courses you want to take</h3>
+            <input type="text" name="courses_taken"><br>
+            <br>
+        </div>
+
+        <div class="btn">
+            <div class="inner">
+            </div>
+            <input type="submit">
+        </div>
+    </form>
 </div>
 
 </body>

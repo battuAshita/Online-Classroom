@@ -3,36 +3,37 @@
 <head>
     <meta charset="utf-8">
     <title>Home Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 
 <body>
 <div class="container">
-<h2 class="text">Login</h2>
-<form name="my_form" method="post" action="{{ url_for('home_page') }}">
-    <div class="data">
-    <h3>Username</h3>
-    <input type="text" name="username"><br>
-    <br>
-    </div>
-    <div class="data">
-    <h3>Password</h3>
-    <input type="text" name="Password"><br>
-    <br>
-    </div>
-    <h4 class="signup-link">Do not have an account? <a href="/register">
-  <div>
-     Sign Up
-  </div>
-</a></h4><br>
-    <br>
-    
-<div class="btn">
-    <div class="inner">
-</div>    
-    <input type="submit">
-</div>
-</form>
+    <h2 class="text">Login</h2>
+    <form name="my_form" method="post" action="{{ url_for('home_page') }}">
+        <div class="data">
+            <h3>Username</h3>
+            <input type="text" name="username"><br>
+            <br>
+        </div>
+        <div class="data">
+            <h3>Password</h3>
+            <input type="text" name="Password"><br>
+            <br>
+        </div>
+        <h4 class="signup-link">Do not have an account? <a href="{{ url_for('register_page') }}">
+            <div>
+                Sign Up
+            </div>
+        </a></h4>
+        <br>
+        <br>
+
+        <div class="btn">
+            <div class="inner">
+            </div>
+            <input type="submit">
+        </div>
+    </form>
 </div>
 
 </body>
