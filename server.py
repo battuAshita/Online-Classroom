@@ -41,6 +41,18 @@ def assignments_page():
         return render_template("Assignments.html")
 
 
+@app.route("/Tests", methods=["GET", "POST"])
+def tests_page():
+    if request.method == "GET":
+        return render_template("tests.html")
+
+
+@app.route("/Calender", methods=["GET", "POST"])
+def calender_page():
+    if request.method == "GET":
+        return render_template("calender.html")
+
+
 if __name__ == "__main__":
     # Get the database
     db = get_database()
