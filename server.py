@@ -37,9 +37,11 @@ def home_page():
     p = request.form['password'] 
     
     # logging in to dashboard
-  
-
-    return render_template("dashboard.html")
+    user_name = db.users.findOne({username:u})
+    if(user_name.password == p):
+        return render_template("dashboard.html")
+    else:
+        return render_template("error.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -84,6 +86,11 @@ def calendar_page():
     if request.method == "GET":
         return render_template("calendar.html")
 
+    
+@app.route("/error", methods=["GET", "POST"])
+def error_page():
+    if request.method == "GET":
+        return render_template("error.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
