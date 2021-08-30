@@ -1,1 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Error Page</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
 
+<body>
+<div class="container">
+    <form name="my_form" method="post" action="{{ url_for('error_page') }}">
+        <h4 class="signup-link">OOPS!! Looks like you are not registered yet.<a href="{{ url_for('register_page') }}">
+        <div class="btn">
+            <div class="inner">
+            </div>
+            <input type="Submit" value="Register">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
