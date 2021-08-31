@@ -11,7 +11,7 @@ CONNECTION_STRING = "mongodb+srv://FlipR:" + urllib.parse.quote_plus(
 client = MongoClient(CONNECTION_STRING)
 
 # Create a database named user data
-db = client['flipr']
+db = client['user_data']
 
 
 class User:
