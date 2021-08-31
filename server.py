@@ -62,7 +62,10 @@ def register_page():
         user = User().register(u, p, e, c)
         db.users.insert_one(user)
 
-    return render_template("homePage.html")
+    if u == "" or p == "" or e == "" or c is None:
+        return render_template("error.html")
+    else:
+        return render_template("homePage.html")
 
 
 @app.route("/dashboard", methods=["GET"])
@@ -94,6 +97,8 @@ def calendar_page():
 def error_page():
     if request.method == "GET":
         return render_template("error.html")
+
+    return render_template("registerPage.html")
 
 
 @app.route("/course", methods=["GET", "POST"])
