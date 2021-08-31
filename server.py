@@ -30,16 +30,18 @@ class User:
 
 @app.route("/", methods=["GET", "POST"])
 def home_page():
+    user_data = dict()
     if request.method == "GET":
         return render_template("homePage.html")
-    
-    u = request.form['username']
-    p = request.form['password'] 
-    
+
+    e = request.form['mail']
+    p = request.form['pass']
+
     # logging in to dashboard
-    user_name = db.users.findOne({username:u})
-    if(user_name.password == p):
-        return render_template("dashboard.html")
+    user_data = db.users.find_one({"email": e, "password": p}, {"username": 1, "courses_taken": 1, "_id": 0})
+
+    if user_data['username'] != "":
+        return render_template("dashboard.html", response=user_data)
     else:
         return render_template("error.html")
 
@@ -86,11 +88,12 @@ def calendar_page():
     if request.method == "GET":
         return render_template("calendar.html")
 
-    
+
 @app.route("/error", methods=["GET", "POST"])
 def error_page():
     if request.method == "GET":
         return render_template("error.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
