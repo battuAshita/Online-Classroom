@@ -94,6 +94,12 @@ def calendar_page():
 def error_page():
     if request.method == "GET":
         return render_template("error.html")
+    
+
+@app.route("/course", methods=["GET", "POST"])
+def course_page():
+    if request.method == "GET":
+        return render_template("course.html")
 
 
 if __name__ == "__main__":
