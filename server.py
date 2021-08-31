@@ -23,7 +23,7 @@ class User:
             "username": username,
             "password": password,
             "email": email,
-            "courses_taken": courses
+            "courses_taken": courses,
             "login_type":loginType
         }
         return user
