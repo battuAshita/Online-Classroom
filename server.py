@@ -30,11 +30,10 @@ class User:
 
 @app.route("/", methods=["GET", "POST"])
 def home_page():
-    user_data = dict()
     if request.method == "GET":
         return render_template("homePage.html")
 
-    u = request.form['username']
+    u = request.form['user']
     p = request.form['pass']
 
     # logging in to dashboard

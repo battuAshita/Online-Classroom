@@ -31,66 +31,21 @@
 
 
 <section class="white-section" id="classes">
-  {%if response %}
-  <h1 class="section-heading"> {{Welcome response['username']}}</h1>
-  {% endif %}
-  <h1 class="section-heading">Your Dashboard</h1>
-  <p>Your courses are: {{l}}</p> 
-
-  <div class="row">
-
-    <div class="course col-lg-4 col-md-6">
-      <div class="card">
-        <div class="class_reg1">
-          <h2>Assignments</h2>
+    {% if response %}
+        <h1 class="section-heading">Welcome {{ response['username'] }}</h1>
+    {% endif %}
+    <h1 class="section-heading"></h1>
+    {% for key in l %}
+        <div class="row">
+            <div class="course col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="class_reg1">
+                        <h2>{{ key }}</h2>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card-header">
-          <p>You can view all your assignments here</p>
-        </div>
-        <div class="card-body">
-          <form name="my_form" action="assignments" method="GET">
-            <p></p>
-            <input class="submit_button" type="submit"  value="View Assignments">
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <div class="course col-lg-4 col-md-6">
-      <div class="card">
-        <div class="class_reg2">
-          <h2>Tests</h2>
-        </div>
-        <div class="card-header">
-          <p>You can view all your Tests here</p>
-        </div>
-        <div class="card-body">
-          <form name="my_form" action="tests" method="GET">
-            <p></p>
-            <input class="submit_button" type="submit"  value="View Tests">
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <div class="course col-lg-4 col-md-6">
-      <div class="card">
-        <div class="class_reg3">
-          <h2>Calender</h2>
-        </div>
-        <div class="card-header">
-          <p>You can view your schedule here</p>
-        </div>
-        <div class="card-body">
-          <form name="my_form" action="calendar" method="GET">
-            <p></p>
-            <input class="submit_button" type="submit"  value="View Schedule">
-          </form>
-        </div>
-      </div>
-    </div>
-
-  </div>
+    {% endfor %}
 
 </section>
 
