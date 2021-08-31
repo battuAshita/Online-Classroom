@@ -16,7 +16,7 @@ db = client['flipr']
 
 class User:
 
-    def register(self, username, password, email, courses=None, loginType):
+    def register(self, username, password, email, courses=None, loginType=''):
         if courses is None:
             courses = list()
         user = {
