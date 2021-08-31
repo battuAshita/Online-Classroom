@@ -34,11 +34,11 @@ def home_page():
     if request.method == "GET":
         return render_template("homePage.html")
 
-    e = request.form['mail']
+    u = request.form['username']
     p = request.form['pass']
 
     # logging in to dashboard
-    user_data = db.users.find_one({"email": e, "password": p}, {"username": 1, "courses_taken": 1, "_id": 0})
+    user_data = db.users.find_one({"username": u, "password": p}, {"username": 1, "courses_taken": 1, "_id": 0})
 
     if user_data['username'] != "":
         return render_template("dashboard.html", response=user_data)
