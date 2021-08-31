@@ -31,9 +31,12 @@
 
 
 <section class="white-section" id="classes">
-
+  {%if response %}
+  <h1 class="section-heading"> {{Welcome response['username']}}</h1>
+  {% endif %}
   <h1 class="section-heading">Dashboard</h1>
-  <p>Your Dashboard. You can view your assignments tests and schedule here</p>
+  <p>Your Dashboard</p>
+    
 
   <div class="row">
 
