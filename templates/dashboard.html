@@ -36,21 +36,20 @@
     {% endif %}
     <h1 class="section-heading"></h1>
     {% for key in l %}
-        <div class="row">
-            <div class="course col-lg-4 col-md-6">
-                <div class="card">
-                    <div class="class_reg1">
-                        <h2>{{ key.upper() }}</h2>
-                    </div>
-                    <div class="card-header">
-                        <p>Click view to view your assignments, tests and schedule.</p>
-                    </div>
-                    <div class="card-body">
-                        <form name="my_form" action="course" method="GET">
-                            <p></p>
-                            <input class="submit_button" type="submit" value="View">
-                        </form>
-                    </div>
+        <div class="row1">
+
+            <div class="card">
+                <div class="class_reg1">
+                    <h2>{{ key.upper() }}</h2>
+                </div>
+                <div class="card-header">
+                    <p>Click view to view your assignments, tests and schedule.</p>
+                </div>
+                <div class="card-body">
+                    <form name="my_form" action="course" method="GET">
+                        <p></p>
+                        <input class="submit_button" type="submit" value="View">
+                    </form>
                 </div>
             </div>
         </div>

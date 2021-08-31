@@ -12,23 +12,28 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
+.card {
+    width: 300px;
+    padding: 10px
+}
+
 .class_reg1 {
     height: 200px;
-    padding: 6%;
+    padding: 20%;
     background-color: #F29191;
     color: white;
 }
 
 .class_reg2 {
     height: 200px;
-    padding: 6%;
+    padding: 20%;
     background-color: #FFC074;
     color: white;
 }
 
 .class_reg3 {
     height: 200px;
-    padding: 6%;
+    padding: 20%;
     background-color: #94D0CC;
     color: white;
 }
@@ -49,7 +54,8 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #D83A56;
     border-color: white;
     margin: 10px;
-    width: 75%;
+    width: 90%;
+    padding: 10px;
     font-family: 'Montserrat';
     -webkit-border-radius: 10;
     -moz-border-radius: 10;
@@ -60,4 +66,22 @@ h1, h2, h3, h4, h5, h6 {
     color: black;
     border-color: black;
     background-color: #fff;
+}
+
+.row {
+    position: fixed;
+    margin-left: 300px;
+    margin-top: 50px;
+}
+
+.row1 {
+    float: left;
+    padding: 30px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
 }
