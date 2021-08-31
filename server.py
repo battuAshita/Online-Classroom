@@ -41,7 +41,8 @@ def home_page():
     user_data = db.users.find_one({"username": u, "password": p}, {"username": 1, "courses_taken": 1, "_id": 0})
 
     if user_data['username'] != "":
-        return render_template("dashboard.html", response=user_data)
+        l = user_data['courses_taken']
+        return render_template("dashboard.html", response=user_data, l=l)
     else:
         return render_template("error.html")
 
