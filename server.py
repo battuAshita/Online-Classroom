@@ -24,7 +24,7 @@ class User:
             "password": password,
             "email": email,
             "courses_taken": courses,
-            "login_type":loginType
+            "login_type": loginType
         }
         return user
 
@@ -94,7 +94,7 @@ def calendar_page():
 def error_page():
     if request.method == "GET":
         return render_template("error.html")
-    
+
 
 @app.route("/course", methods=["GET", "POST"])
 def course_page():

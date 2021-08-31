@@ -1,61 +1,63 @@
 body {
-  font-family: "Montserrat";
-  text-align: center;
+    font-family: "Montserrat";
+    text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat-Bold";
+    font-family: "Montserrat-Bold";
 }
 
 #classes {
-  padding: 100px;
-  text-align: center;
+    padding: 100px;
+    text-align: center;
 }
 
-.class_reg1{
-  height: 200px;
-  padding: 6%;
-  background-color: #F29191;
-  color: white;
+.class_reg1 {
+    height: 200px;
+    padding: 6%;
+    background-color: #F29191;
+    color: white;
 }
 
-.class_reg2{
-  height: 200px;
-  padding: 6%;
-  background-color: #FFC074;
-  color: white;
+.class_reg2 {
+    height: 200px;
+    padding: 6%;
+    background-color: #FFC074;
+    color: white;
 }
 
-.class_reg3{
-  height: 200px;
-  padding: 6%;
-  background-color: #94D0CC;
-  color: white;
+.class_reg3 {
+    height: 200px;
+    padding: 6%;
+    background-color: #94D0CC;
+    color: white;
 }
 
 .price-text {
-  font-size: 3rem;
-  line-height: 1.5;
+    font-size: 3rem;
+    line-height: 1.5;
 }
 
 .course {
-  padding: 3% 2%;
+    padding: 3% 2%;
 }
-.submit_button{
-  position: relative;
-  color: #fff;
-  font-size: 1.25rem;
-  background-color: #D83A56;
-  border-color: white;
-  margin: 10px;
-  width: 75%;
-  font-family: 'Montserrat';
-  -webkit-border-radius: 10;
-  -moz-border-radius: 10;
-  border-radius: 10px;
+
+.submit_button {
+    position: relative;
+    color: #fff;
+    font-size: 1.25rem;
+    background-color: #D83A56;
+    border-color: white;
+    margin: 10px;
+    width: 75%;
+    font-family: 'Montserrat';
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
 }
-.submit_button:hover{
-  color: black;
-  border-color: black;
-  background-color: #fff;
+
+.submit_button:hover {
+    color: black;
+    border-color: black;
+    background-color: #fff;
 }

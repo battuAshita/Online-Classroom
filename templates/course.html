@@ -42,7 +42,7 @@
                     <p>You can view all your assignments here</p>
                 </div>
                 <div class="card-body">
-                    <form name="my_form" action="assignments" method="GET">
+                    <form name="my_form" action="{{ url_for( 'assignments_page' ) }}" method="GET">
                         <p></p>
                         <input class="submit_button" type="submit" value="View Assignments">
                     </form>
@@ -59,7 +59,7 @@
                     <p>You can view all your Tests here</p>
                 </div>
                 <div class="card-body">
-                    <form name="my_form" action="tests" method="GET">
+                    <form name="my_form" action="{{ url_for('tests_page') }}" method="GET">
                         <p></p>
                         <input class="submit_button" type="submit" value="View Tests">
                     </form>
@@ -76,7 +76,7 @@
                     <p>You can view your schedule here</p>
                 </div>
                 <div class="card-body">
-                    <form name="my_form" action="calendar" method="GET">
+                    <form name="my_form" action="{{ url_for('calendar_page') }}" method="GET">
                         <p></p>
                         <input class="submit_button" type="submit" value="View Schedule">
                     </form>
